@@ -11,3 +11,6 @@ class Testimony(models.Model):
 
 class TestimonyPluginModel(CMSPlugin):
     testimonies = models.ManyToManyField(Testimony)
+
+    def copy_relations(self, oldinstance):
+        self.testimonies = oldinstance.testimonies.all()

@@ -15,6 +15,6 @@ class TestimonyPluginPublisher(CMSPluginBase):
     def render(self, context, instance, placeholder):
         context.update({
             'instance': instance,
-            'testimonies' : Testimony.objects.all()
+            'testimonies' : instance.testimonies.all()
         })
         return context
