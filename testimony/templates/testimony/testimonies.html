@@ -1,0 +1,12 @@
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        {% for testimony in testimonies %}
+        <div class="carousel-item {% if forloop.first %}active{% endif%}">
+            <blockquote>
+                {{testimony.story|safe}}
+                <label class="w-100 text-right">{{testimony.witness}}</label>
+            </blockquote>
+        </div>
+        {% endfor %}
+    </div>
+</div>
